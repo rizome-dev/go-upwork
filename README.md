@@ -1,23 +1,15 @@
 # Upwork Go SDK
 
-A comprehensive Go SDK for the Upwork API, featuring full GraphQL support, concurrent operations, and idiomatic Go patterns.
+[![GoDoc](https://pkg.go.dev/badge/github.com/rizome-dev/go-upwork)](https://pkg.go.dev/github.com/rizome-dev/go-upwork)
+[![Go Report Card](https://goreportcard.com/badge/github.com/rizome-dev/go-upwork)](https://goreportcard.com/report/github.com/rizome-dev/go-upwork)
 
-## Features
-
-- 🚀 Full GraphQL API support
-- 🔐 OAuth 2.0 authentication (all grant types)
-- ⚡ Concurrent request handling
-- 🔄 Automatic retry logic
-- 📊 Rate limiting
-- 🎯 Type-safe operations
-- 📝 Comprehensive error handling
-- 🧪 Testable design
-
-## Installation
-
-```bash
-go get github.com/rizome-dev/go-upwork/pkg
+```shell
+go get github.com/rizome-dev/go-upwork
 ```
+
+built by: [rizome labs](https://rizome.dev)
+
+contact us: [hi (at) rizome.dev](mailto:hi@rizome.dev)
 
 ## Quick Start
 

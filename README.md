@@ -300,16 +300,79 @@ go-upwork/
 
 ## Testing
 
+The SDK includes a comprehensive test suite with unit tests, integration tests, and benchmarks.
+
+### Quick Testing
+
 ```bash
 # Run all tests
-go test ./...
+make test
 
-# Run with coverage
-go test -cover ./...
+# Run tests with coverage
+make test-coverage
+
+# Run unit tests only
+make test-unit
+
+# Run integration tests
+make test-integration
+
+# Run with race detector
+make test-race
 
 # Run benchmarks
-go test -bench=. ./...
+make test-bench
 ```
+
+### Test Categories
+
+1. **Unit Tests** - Test individual components in isolation using mocks
+2. **Integration Tests** - Test against the real Upwork API (requires credentials)
+3. **Race Tests** - Detect concurrent access issues
+4. **Benchmarks** - Performance testing
+
+### Coverage Goals
+
+- Overall Coverage: >80%
+- Critical Paths: 100% (authentication, error handling)
+- Service Layer: >90%
+
+### Running Specific Tests
+
+```bash
+# Run specific test
+make test-specific TEST=TestOAuth2
+
+# Test specific package
+make test-package PKG=./pkg/services
+
+# With verbose output
+go test -v ./pkg/auth/...
+
+# Integration tests (requires API credentials)
+go test -tags=integration ./tests/integration/...
+```
+
+### Test Environment Setup
+
+For integration tests, set these environment variables:
+
+```bash
+export UPWORK_CLIENT_ID=your-client-id
+export UPWORK_CLIENT_SECRET=your-client-secret
+export UPWORK_ACCESS_TOKEN=your-access-token
+export UPWORK_REFRESH_TOKEN=your-refresh-token
+export UPWORK_ORGANIZATION_ID=your-org-id
+```
+
+### Continuous Integration
+
+Tests run automatically on:
+- Pull requests
+- Pushes to main branch
+- Daily schedule
+
+See [TESTING.md](TESTING.md) for detailed testing documentation.
 
 ## Examples
 
